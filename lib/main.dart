@@ -37,19 +37,51 @@ class _DrumPageState extends State<DrumPage> {
       child: Column(
         children: [
           Expanded(
+            child: Column(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      TextButtonFonksiyonu('bip', Colors.blue, 1),
+                      TextButtonFonksiyonu('bongo', Colors.cyanAccent, 1),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      TextButtonFonksiyonu('clap1', Colors.cyan, 1),
+                      TextButtonFonksiyonu('clap2', Colors.cyanAccent, 1),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      TextButtonFonksiyonu('clap3', Colors.cyan, 1),
+                      TextButtonFonksiyonu('crash', Colors.cyanAccent, 1),
+                      TextButtonFonksiyonu('woo', Colors.cyanAccent, 1),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      TextButtonFonksiyonu("how", Colors.cyan, 1),
+                      TextButtonFonksiyonu('oobah', Colors.cyanAccent, 1),
+                      TextButtonFonksiyonu('ridebel', Colors.red, 1)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
+          /*
+          Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        bip('bip');
-                      });
-                    },
-                    child: Container(
-                      color: Colors.deepPurple,
-                    ),
-                  ),
+                  child: TextButtonFonksiyonu(),
                 ),
                 Expanded(
                   child: TextButton(
@@ -149,7 +181,37 @@ class _DrumPageState extends State<DrumPage> {
               ],
             ),
           ),
+          */
         ],
+      ),
+    );
+  }
+
+  Expanded TextButtonFonksiyonu(String sesAdi, Color renk, int ras) {
+    return Expanded(
+      flex: ras,
+      child: TextButton(
+        onPressed: () {
+          setState(() {
+            bip(sesAdi);
+          });
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            color: renk,
+          ),
+          child: Center(
+            child: Text(
+              sesAdi,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic),
+            ),
+          ),
+        ),
       ),
     );
   }
