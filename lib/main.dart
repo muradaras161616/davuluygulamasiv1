@@ -187,9 +187,9 @@ class _DrumPageState extends State<DrumPage> {
     );
   }
 
-  Expanded TextButtonFonksiyonu(String sesAdi, Color renk, int ras) {
+  Expanded TextButtonFonksiyonu(String sesAdi, Color renk, int rasa) {
     return Expanded(
-      flex: ras,
+      flex: rasa,
       child: TextButton(
         onPressed: () {
           setState(() {
